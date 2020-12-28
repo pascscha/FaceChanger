@@ -1,4 +1,4 @@
-class InputHandler:
+class UserInputHandler:
     NO_CLICK=0b00
     LEFT_CLICK=0b01
     RIGHT_CLICK=0b10
