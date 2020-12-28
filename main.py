@@ -99,18 +99,20 @@ if __name__ == "__main__":
                     break # Input finished
             
             features = detect_features(img, face_detector, feature_detector)
-            new_features = get_new_features(features, ui_handler.get_filter())
-            ui_handler.features = new_features
-            new_img = transform(img, features, new_features)
+            if features is not None:
+                new_features = get_new_features(features, ui_handler.get_filter())
+                ui_handler.features = new_features
+                new_img = transform(img, features, new_features)
 
-            # Start video output
-            if args.output is not None:   
-                if out is None:
-                    height, width, channels = new_img.shape
-                    fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-                    out = cv2.VideoWriter(args.output, fourcc, 20, (width, height))
-                out.write(new_img)
-    
+                # Start video output
+                if args.output is not None:   
+                    if out is None:
+                        height, width, channels = new_img.shape
+                        fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+                        out = cv2.VideoWriter(args.output, fourcc, 20, (width, height))
+                    out.write(new_img)
+            else:
+                new_img = img  
             cv2.imshow("FaceChanger", new_img)
             key = cv2.waitKey(1)
     except KeyboardInterrupt:
