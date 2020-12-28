@@ -80,7 +80,7 @@ def parse_args():
     parser.add_argument(
         "-l", "--loop",
         action="store_true",
-        help="Loop the input video. If the input is an image, this option should be set, otherwise the image will only be shown for one frame."
+        help="Loop the input video. If the input is an image, this flag should be set, otherwise the image will only be shown for one frame."
     )
     parser.add_argument(
         "-o", "--output",
@@ -106,7 +106,13 @@ def parse_args():
             processed.filter = json.load(f)
 
     if args.save is not None:
-        if not args.save.lower().endswith(".json"):
+        if os.path.exists(args.save):
+            warn(f"Filter save path {args.save} does already exist. Overwrite? [y/n]")
+            answer = input()
+            if answer.lower() not in ["y", "yes"]:
+                warn(f"Filter will not be saved.")
+                args.save = None
+        elif not args.save.lower().endswith(".json"):
             warn("The save path for the filter does not end in .json, the resulting file will be a JSON file nevertheless.")
     processed.save = args.save
 
@@ -120,7 +126,13 @@ def parse_args():
     processed.loop = args.loop
 
     if args.output is not None:
-        if not args.output.lower().endswith(".mp4"):
+        if os.path.exists(args.output):
+            warn(f"Video save path {args.output} does already exist. Overwrite? [y/n]")
+            answer = input()
+            if answer.lower() not in ["y", "yes"]:
+                warn(f"Output video will not be saved.")
+                args.output = None
+        elif not args.output.lower().endswith(".mp4"):
             warn("The save path for the video file does not end in .mp4, the resulting file will be a MP4 file nevertheless.")
     processed.output = args.output
 
