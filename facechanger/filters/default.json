@@ -1,0 +1,62 @@
+{
+    "left_brow": {
+     "trans": [
+      0,
+      0
+     ],
+     "zoom": [
+      1,
+      1
+     ]
+    },
+    "right_brow": {
+     "trans": [
+      0,
+      0
+     ],
+     "zoom": [
+      1,
+      1
+     ]
+    },
+    "nose": {
+     "trans": [
+      0,
+      0
+     ],
+     "zoom": [
+      1,
+      1
+     ]
+    },
+    "left_eye": {
+     "trans": [
+      0,
+      0
+     ],
+     "zoom": [
+      1,
+      1
+     ]
+    },
+    "right_eye": {
+     "trans": [
+      0,
+      0
+     ],
+     "zoom": [
+      1,
+      1
+     ]
+    },
+    "mouth": {
+     "trans": [
+      0,
+      0
+     ],
+     "zoom": [
+      1,
+      1
+     ]
+    }
+   }
