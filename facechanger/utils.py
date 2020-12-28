@@ -25,6 +25,11 @@ def parse_args():
         help="The path input file for the face change. Uses webcam if none is provided."
     )
     parser.add_argument(
+        "-l", "--loop",
+        action="store_true",
+        help="Loop the input video. If the input is an image, this option should be set, otherwise the image will only be shown for one frame."
+    )
+    parser.add_argument(
         "-o", "--output",
         type=str,
         required=False,
@@ -55,7 +60,11 @@ def parse_args():
     if args.input is not None:
         if not os.path.exists(args.input):
             parser.error("The provided input path does not exist.")
-    processed.input = args.input
+        processed.input = args.input
+    else:
+        processed.input = 0 # Use webcam
+    
+    processed.loop = args.loop
 
     if args.output is not None:
         if not args.save.lower().endswith(".mp4"):
