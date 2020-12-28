@@ -4,10 +4,10 @@ Simple script that can warp faces similar to some snapchat filters or face swaps
 ## Demo
 ![Demo](examples/stock-example.gif)
 
-This is a demo on a stock video from [pexels.com](https://www.pexels.com/video/man-in-white-long-sleeves-sitting-while-happily-looking-at-the-camera-5989765/).
+This is a demo on a stock video from [pexels.com](https://www.pexels.com/video/man-in-white-long-sleeves-sitting-while-happily-looking-at-the-camera-5989765/), see the usage chapter below to see how to achieve this yourself.
 
 ## Usage
-When running the script, the different facial features can be moved with the left mouse button and scaled with the right mouse button. You can use `./main.py -h` to get an overview of the available command line options. Here are some examples:
+Clone this repo, then run the `main.py` script within the root folder of the cloned repository. When running the script, the different facial features can be moved with the left mouse button and scaled with the right mouse button. You can use `./main.py -h` to get an overview of the available command line options. Here are some examples:
 - `./main.py`
     - Run the program on the live feed from your webcam
 - `./main.py -i examples/stock.mp4 -l -o out.mp4`

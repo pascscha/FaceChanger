@@ -53,6 +53,7 @@ def get_new_features(features, filter):
     return np.array(new_features)
 
 if __name__ == "__main__":
+    os.chdir(os.path.dirname(__file__))
     args = utils.parse_args()
     
     # Download facial features detection model if necessary
