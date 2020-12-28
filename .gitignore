@@ -1,5 +1,6 @@
 # Face detection model
 *.dat
+*.mp4
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

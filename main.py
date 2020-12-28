@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 from facechanger import utils
-from facechanger import user_input
 from facechanger import constants
 from facechanger.transform import transform
 
@@ -69,7 +68,7 @@ if __name__ == "__main__":
     feature_detector = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 
     # Set up user input handler
-    ui_handler = user_input.UserInputHandler(args.filter)
+    ui_handler = utils.UserInputHandler(args.filter)
 
     # Set up opencv window
     windowname = "FaceChanger"
