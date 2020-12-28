@@ -103,9 +103,6 @@ if __name__ == "__main__":
             ui_handler.features = new_features
             new_img = transform(img, features, new_features)
 
-            for x,y in new_features:
-                cv2.circle(img=new_img, center=(x,y), radius=3, color=(0,255,0), thickness=-1)
-
             # Start video output
             if args.output is not None:   
                 if out is None:
