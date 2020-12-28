@@ -67,7 +67,7 @@ def parse_args():
     processed.loop = args.loop
 
     if args.output is not None:
-        if not args.save.lower().endswith(".mp4"):
+        if not args.output.lower().endswith(".mp4"):
             warn("The save path for the video file does not end in .mp4, the resulting file will be a MP4 file nevertheless.")
     processed.output = args.output
 
