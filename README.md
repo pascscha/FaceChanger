@@ -4,22 +4,16 @@ Simple script that can warp faces similar to some snapchat filters or face swaps
 ## Demo
 ![Demo](examples/stock-example.gif)
 
-This is a demo on a stock video from [pexels.com](https://www.pexels.com/video/man-in-white-long-sleeves-sitting-while-happily-looking-at-the-camera-5989765/). The different facial features can be moved with the left mouse button and scaled with the right mouse button.
+This is a demo on a stock video from [pexels.com](https://www.pexels.com/video/man-in-white-long-sleeves-sitting-while-happily-looking-at-the-camera-5989765/).
 
 ## Usage
-```
-usage: main.py [-h] [-f FILTER] [-s SAVE] [-i INPUT] [-l] [-o OUTPUT]
-
-Face Changer. Let's you change your appearance in real-time.
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -f FILTER, --filter FILTER
-                        The path to the filter that should be used. Uses default filter, that does not change the face, if none is provided.
-  -s SAVE, --save SAVE  The path (JSON) where the resulting filter of the interactive session should be saved.
-  -i INPUT, --input INPUT
-                        The path input file for the face change. Uses webcam if none is provided.
-  -l, --loop            Loop the input video. If the input is an image, this flag should be set, otherwise the image will only be shown for one frame.
-  -o OUTPUT, --output OUTPUT
-                        The path (MP4) where the resulting video should be saved.
-```
+When running the script, the different facial features can be moved with the left mouse button and scaled with the right mouse button. You can use `./main.py -h` to get an overview of the available command line options. Here are some examples:
+- `./main.py`
+    - Run the program on the live feed from your webcam
+- `./main.py -i examples/stock.mp4 -l -o out.mp4`
+    - `-i`: Use the example stock video provided in this repository
+    - `-l`: Loop the video
+    - `-o`: Save the resulting video into the file out.mp4
+- `./main.py -f filters/long-nose.json -s filters/my-custom-filter.json`
+    - `-f`: Use the preset filter long-nose
+    - `-s`: Save the interactive changes to the filter in a new file.

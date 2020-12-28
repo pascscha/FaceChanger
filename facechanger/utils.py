@@ -102,7 +102,7 @@ def parse_args():
                 except json.decoder.JSONDecodeError:
                     parser.error("The provided filter is not a valid JSON file.")            
     else:
-        with open(os.path.join("facechanger","filters","default.json")) as f:
+        with open(os.path.join("filters","default.json")) as f:
             processed.filter = json.load(f)
 
     if args.save is not None:

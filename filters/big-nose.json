@@ -1,0 +1,9 @@
+{
+    "lower_head": {"trans":[0,0], "zoom":[1,1]},
+    "left_brow": {"trans":[0,0], "zoom":[1,3]},
+    "right_brow": {"trans":[0,0], "zoom":[1,0]},
+    "nose": {"trans":[0,10], "zoom":[3, 1]},
+    "left_eye": {"trans":[-15,0], "zoom":[0.9, 0.9]},
+    "right_eye": {"trans":[15,0], "zoom":[0.9, 0.9]},
+    "mouth": {"trans":[0,10], "zoom":[1.8,1]}
+    }
