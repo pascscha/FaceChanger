@@ -60,5 +60,5 @@ def transform(src_img, src_points, dst_points):
             # Add new pixels to masked area
             dst_img_cropped+=dst_img_warped*mask
         except Exception as e:
-            pass
+            print("Error:", e)
     return dst_img
